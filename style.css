@@ -83,16 +83,14 @@ a {
 #toggle-button {
   text-align: right;
 }
-#home,
-#delete {
+.tab{
   margin-left: 25px;
   margin-right: 25px;
   font-size: 30px;
   color: white;
   text-decoration: none;
 }
-#home:hover,
-#delete:hover {
+.tab:hover {
   /*   border: 4px solid orange; */
   /*   padding: 5px; */
   color: lightblue;
