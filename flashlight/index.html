@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function update(e) {
+        var x = e.clientX || e.touches[0].clientX;
+        var y = e.clientY || e.touches[0].clientY;
+
+        document.documentElement.style.setProperty("--cursorX", x + "px");
+        document.documentElement.style.setProperty("--cursorY", y + "px");
+      }
+
+      document.addEventListener("mousemove", update);
+      document.addEventListener("touchmove", update);
+    </script>
+    <style>
+            html {
+              text-align: center;
+              background: black;
+              color: #c00;
+            }
+            /* Flashlight Overlay */
+      :root {
+        cursor: none;
+        --cursorX: 100vw;
+        --cursorY: 100vh;
+      }
+      html{cursor:none;}
+      :root:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        pointer-events: none;
+        background: radial-gradient(
+          circle 10vmax at var(--cursorX) var(--cursorY),
+          rgba(0,0,0,0) 0%,
+          rgba(0,0,0,.50) 80%,
+          rgba(0,0,0,.95) 100%
+        )
+      }
+    </style>
+    <title>Hidden Page</title>
+  </head>
+  <body>
+    <div class="page_header">
+      <h1 id="header">Template</h1>
+      <div id="nav-bar">
+        <a href="/home" id="home">Home</a>
+        <a href="/home/delete" id="delete">Delete</a>
+      </div>
+    </div>
+ 
+
+    <h1>YOU FOUND A HIDDEN PAGE!</h1>
+  </body>
+</html>
